@@ -1,6 +1,6 @@
 //
-//  StocksTests.swift
-//  PeopleAndAppleStockPrices
+//  ContactsTests.swift
+//  ContactsTests
 //
 //  Created by Brendon Cecilio on 12/3/19.
 //  Copyright © 2019 Pursuit. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class StocksTests: XCTestCase {
+class ContactsTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,7 +25,7 @@ class StocksTests: XCTestCase {
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
