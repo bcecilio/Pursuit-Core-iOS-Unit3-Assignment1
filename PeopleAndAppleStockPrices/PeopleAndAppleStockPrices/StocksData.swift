@@ -1,5 +1,5 @@
 //
-//  UserContactData.swift
+//  StocksData.swift
 //  PeopleAndAppleStockPrices
 //
 //  Created by Brendon Cecilio on 12/3/19.
@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct StocksData {
+    let date: String
+    let uOpen: Double
+}
+
+

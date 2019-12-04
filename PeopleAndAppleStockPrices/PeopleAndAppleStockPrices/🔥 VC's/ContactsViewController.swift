@@ -13,33 +13,35 @@ class ContactsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var userInfo = [UserInfo]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    func loadData() {
-        userInfo = UserData.getUsers()
-    }
-}
-
-extension ContactsViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userInfo.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-        
-        let userCell = userInfo[indexPath.row]
-        cell.textLabel?.text = userCell.name.first
-        cell.detailTextLabel?.text = userCell.location.city
-    }
+//    var userInfo = [UserInfo]() {
+//        didSet {
+//            tableView.reloadData()
+//        }
+//    }
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//    }
+//    
+//    func loadData() {
+//        
+//    }
+//}
+//
+//extension ContactsViewController: UITableViewDataSource {
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return userInfo.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+//        
+//        let userCell = userInfo[indexPath.row]
+//        cell.textLabel?.text = userCell.name.first
+//        cell.detailTextLabel?.text = userCell.location.city
+//        
+//        return cell
+//    }
 }
