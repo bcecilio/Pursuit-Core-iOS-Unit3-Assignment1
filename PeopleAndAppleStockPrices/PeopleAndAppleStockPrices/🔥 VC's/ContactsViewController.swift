@@ -21,16 +21,14 @@ class ContactsViewController: UIViewController {
     
     var searchQuery = "" {
         didSet {
-            let filename = "userinfo"
-            let ext = "json"
-            let data = Bundle.parseData(filename: filename, ext: ext)
-            let users = UserData.getUserInfo(from: data).filter {$0.fullName.lowercased().contains(searchQuery.lowercased())}
+            searchBarQuery()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        searchBar.delegate = self
         loadData()
     }
     
@@ -43,6 +41,10 @@ class ContactsViewController: UIViewController {
     
     func loadData() {
         userInfo = UserData.getUserInfo(from: Data.init())
+    }
+    
+    func searchBarQuery() {
+        userInfo = UserData.getUserInfo(from: Data.init()).filter {$0.fullName.lowercased().contains(searchQuery.lowercased())}
     }
 }
 
@@ -66,5 +68,11 @@ extension ContactsViewController: UITableViewDataSource {
 extension ContactsViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+                    searchBarQuery()
+                    loadData()
+                    return
+                }
+                searchQuery = searchText
     }
 }
