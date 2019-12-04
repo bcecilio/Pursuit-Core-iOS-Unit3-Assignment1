@@ -38,7 +38,7 @@ extension UserData {
             let userData = try JSONDecoder().decode(UserData.self, from: data)
             users = userData.results
         } catch {
-            fatalError("failed to load contents!!")
+            fatalError("failed to load contents \(error)!!")
         }
         return users
     }

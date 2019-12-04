@@ -8,9 +8,22 @@
 
 import Foundation
 
-struct StocksData {
-    let date: String
-    let uOpen: Double
-}
+//struct StocksData: Decodable {
+//    let date: String
+//    let uOpen: Double
+//}
+//
+//extension StocksData {
+//    static func getStockInfo(from data: Data) -> [StocksData] {
+//        var stocks = [StocksData]()
+//        
+//        do {
+//            let stockData = try JSONDecoder().decode([StocksData].self, from: data)
+//            stocks = stockData.
+//        } catch {
+//            
+//        }
+//    }
+//}
 
 
