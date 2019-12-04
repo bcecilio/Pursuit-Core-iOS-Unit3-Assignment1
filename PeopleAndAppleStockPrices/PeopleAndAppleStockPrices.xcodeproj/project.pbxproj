@@ -13,6 +13,7 @@
 		577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF421BA8BA20083EB97 /* LaunchScreen.storyboard */; };
 		577E5BFF21BA8C3B0083EB97 /* userinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BFE21BA8C3B0083EB97 /* userinfo.json */; };
 		577E5C0121BA8C5C0083EB97 /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5C0021BA8C5C0083EB97 /* applstockinfo.json */; };
+		B74EACCA23986907002ED016 /* UserImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EACC923986907002ED016 /* UserImageClient.swift */; };
 		B76DD0E2239856AC00424809 /* StocksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AE46BC2397577C00047F90 /* StocksTests.swift */; };
 		B76DD0E3239856AC00424809 /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5A59E2397174C0002745A /* ContactsTests.swift */; };
 		B76DD0E4239856AC00424809 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759837023974AEF00920FE6 /* Bundle+Extensions.swift */; };
@@ -50,6 +51,7 @@
 		577E5BF721BA8BA20083EB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577E5BFE21BA8C3B0083EB97 /* userinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userinfo.json; sourceTree = "<group>"; };
 		577E5C0021BA8C5C0083EB97 /* applstockinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applstockinfo.json; sourceTree = "<group>"; };
+		B74EACC923986907002ED016 /* UserImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageClient.swift; sourceTree = "<group>"; };
 		B759837023974AEF00920FE6 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		B7AE46BA2397577C00047F90 /* StocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AE46BC2397577C00047F90 /* StocksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTests.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				B759837023974AEF00920FE6 /* Bundle+Extensions.swift */,
 				B7C5A59623970F770002745A /* UserContactData.swift */,
 				B7C5A5572396DDB50002745A /* ContactsViewController.swift */,
+				B74EACC923986907002ED016 /* UserImageClient.swift */,
 				B7C5A5592396E0AA0002745A /* StocksViewController.swift */,
 				B7C5A55B2396E1E80002745A /* ContactsDetailController.swift */,
 				B7C5A55D2396E1F50002745A /* StocksDetailController.swift */,
@@ -308,6 +311,7 @@
 				B7C5A55C2396E1E80002745A /* ContactsDetailController.swift in Sources */,
 				B76DD0E2239856AC00424809 /* StocksTests.swift in Sources */,
 				B7C5A55E2396E1F50002745A /* StocksDetailController.swift in Sources */,
+				B74EACCA23986907002ED016 /* UserImageClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

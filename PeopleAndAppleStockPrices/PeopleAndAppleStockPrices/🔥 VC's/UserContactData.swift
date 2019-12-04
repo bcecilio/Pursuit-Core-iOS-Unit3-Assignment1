@@ -18,6 +18,7 @@ struct UserInfo: Decodable {
     var fullName: String { return name.first + " " + name.last }
     let email: String
     let phone: String
+    let picture: [Picture]
 }
 
 struct Name: Decodable {
@@ -31,6 +32,10 @@ struct Location: Decodable {
     let city: String
     let state: String
     let postcode: String
+}
+
+struct Picture: Decodable {
+    let large: String
 }
 
 extension UserData {
@@ -49,5 +54,11 @@ extension UserData {
             fatalError("failed to load contents \(error)!!")
         }
         return users
+    }
+}
+
+extension UserData {
+    var jumboImage: Picture? {
+        return Picture.filter { $0.format == "superJumbo" }.first
     }
 }
