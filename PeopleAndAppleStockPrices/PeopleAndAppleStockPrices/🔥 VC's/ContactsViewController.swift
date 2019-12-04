@@ -18,11 +18,27 @@ class ContactsViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    var searchQuery = "" {
+        didSet {
+            let filename = "userinfo"
+            let ext = "json"
+            let data = Bundle.parseData(filename: filename, ext: ext)
+            let users = UserData.getUserInfo(from: data).filter {$0.fullName.lowercased().contains(searchQuery.lowercased())}
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         loadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let ContactDetailViewController = segue.destination as? ContactsDetailController, let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        ContactDetailViewController.contactDetail = userInfo[indexPath.row]
     }
     
     func loadData() {
@@ -40,9 +56,15 @@ extension ContactsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactsCell", for: indexPath)
         
         let userCell = userInfo[indexPath.row]
-        cell.textLabel?.text = userCell.name.first
+        cell.textLabel?.text = userCell.fullName
         cell.detailTextLabel?.text = userCell.location.city
         
         return cell
+    }
+}
+
+extension ContactsViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     }
 }
