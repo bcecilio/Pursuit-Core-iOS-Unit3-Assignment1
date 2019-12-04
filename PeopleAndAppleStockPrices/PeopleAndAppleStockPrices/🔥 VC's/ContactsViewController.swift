@@ -37,7 +37,7 @@ extension ContactsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactsCell", for: indexPath)
         
         let userCell = userInfo[indexPath.row]
         cell.textLabel?.text = userCell.name.first

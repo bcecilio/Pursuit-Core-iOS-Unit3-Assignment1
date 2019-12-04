@@ -34,7 +34,12 @@ extension UserData {
     static func getUserInfo(from data: Data) -> [UserInfo] {
         var users = [UserInfo]()
         
+        guard let fileURL = Bundle.main.url(forResource: "userinfo", withExtension: "json") else {
+            fatalError()
+        }
+        
         do {
+            let data = try Data(contentsOf: fileURL)
             let userData = try JSONDecoder().decode(UserData.self, from: data)
             users = userData.results
         } catch {
