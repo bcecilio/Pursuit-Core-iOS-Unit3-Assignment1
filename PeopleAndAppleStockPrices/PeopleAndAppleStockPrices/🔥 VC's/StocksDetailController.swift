@@ -16,7 +16,7 @@ class StocksDetailController: UIViewController {
     @IBOutlet weak var closeStockLabel: UILabel!
     
     var stockDetail: StocksData!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
