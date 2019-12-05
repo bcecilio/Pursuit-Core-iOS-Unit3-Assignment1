@@ -24,6 +24,13 @@ class StocksViewController: UIViewController {
         loadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let StockDetailController = segue.destination as? StocksDetailController, let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        StockDetailController.stockDetail = stockInfo[indexPath.row]
+    }
+    
     func loadData() {
         stockInfo = StocksData.getStockInfo(from: Data.init())
     }
@@ -38,10 +45,16 @@ extension StocksViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
         
         let stockCell = stockInfo[indexPath.row]
-        cell.textLabel?.text = stockCell.date
-        cell.detailTextLabel?.text = stockCell.uOpen.description
+        cell.textLabel?.text = stockCell.label
+        cell.detailTextLabel?.text = stockCell.open.description
         return cell
     }
     
-    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return stockInfo.count
+//    }
+//
+//    func tableViewHeader(_ tableView: UITableView, titleForHeaderInSection: Int) -> String? {
+//
+//    }
 }

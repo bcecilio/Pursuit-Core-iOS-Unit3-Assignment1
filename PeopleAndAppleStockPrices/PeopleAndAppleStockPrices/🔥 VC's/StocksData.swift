@@ -9,15 +9,22 @@
 import Foundation
 
 struct StocksData: Decodable {
+    
     let date: String
-    let uOpen: Double
+    let open: Double
+    let close: Double
+    let label: String
 }
 
 extension StocksData {
     static func getStockInfo(from data: Data) -> [StocksData] {
         var stocks = [StocksData]()
+        guard let fileURL = Bundle.main.url(forResource: "applstockinfo", withExtension: "json") else {
+            fatalError("could not locate json file")
+        }
         
         do {
+            let data = try Data(contentsOf: fileURL)
             let stockData = try JSONDecoder().decode([StocksData].self, from: data)
             stocks = stockData
         } catch {
@@ -26,5 +33,3 @@ extension StocksData {
         return stocks
     }
 }
-
-
