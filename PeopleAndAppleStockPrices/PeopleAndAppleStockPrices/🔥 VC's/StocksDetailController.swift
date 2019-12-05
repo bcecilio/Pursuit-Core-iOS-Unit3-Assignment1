@@ -10,7 +10,7 @@ import UIKit
 
 class StocksDetailController: UIViewController {
     
-    @IBOutlet weak var imageVIew: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var openStockLabel: UILabel!
     @IBOutlet weak var closeStockLabel: UILabel!
@@ -39,8 +39,10 @@ class StocksDetailController: UIViewController {
         
         if stockInfo.open > stockInfo.close {
             view.backgroundColor = .green
+            imageView.image = UIImage(imageLiteralResourceName: "thumbsUp")
         } else if stockInfo.open < stockInfo.close {
             view.backgroundColor = .red
+            imageView.image = UIImage(imageLiteralResourceName: "thumbsDown")
         }
     }
 }

@@ -116,7 +116,7 @@
                     <connections>
                         <outlet property="closeStockLabel" destination="KXG-Nl-hzv" id="78G-dT-3FC"/>
                         <outlet property="dateLabel" destination="Y6C-46-LdY" id="NSH-Xl-vwS"/>
-                        <outlet property="imageVIew" destination="jPk-9M-btz" id="ho0-z6-Dms"/>
+                        <outlet property="imageView" destination="jPk-9M-btz" id="ho0-z6-Dms"/>
                         <outlet property="openStockLabel" destination="MAk-Zk-XYN" id="X4j-vL-4Jj"/>
                     </connections>
                 </viewController>
