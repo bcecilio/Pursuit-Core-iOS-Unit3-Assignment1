@@ -20,7 +20,8 @@ class StocksViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.dataSource = self
+        tableView.dataSource = self
+        loadData()
     }
     
     func loadData() {
@@ -38,6 +39,7 @@ extension StocksViewController: UITableViewDataSource {
         
         let stockCell = stockInfo[indexPath.row]
         cell.textLabel?.text = stockCell.date
+        cell.detailTextLabel?.text = stockCell.uOpen.description
         return cell
     }
     
