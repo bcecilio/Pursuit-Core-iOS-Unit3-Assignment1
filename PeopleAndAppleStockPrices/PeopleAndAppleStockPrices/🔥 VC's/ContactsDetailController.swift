@@ -16,7 +16,7 @@ class ContactsDetailController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
-    var contactDetail: UserInfo?
+    var contactDetail: UserInfo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +31,16 @@ class ContactsDetailController: UIViewController {
         addressLabel.text = contactInfo.location.street
         phoneLabel.text = contactInfo.phone
         emailLabel.text = contactInfo.email
+        
+        ImageClient.fetchImage(for: contactDetail.picture.large) { [unowned self] (result) in
+            switch result {
+            case .failure(let error):
+                print("error \(error)")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.profileImage.image = image
+                }
+            }
+        }
     }
 }
