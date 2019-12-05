@@ -15,17 +15,12 @@ class StocksDetailController: UIViewController {
     @IBOutlet weak var openStockLabel: UILabel!
     @IBOutlet weak var closeStockLabel: UILabel!
     
-    var stockDetail: StocksData? {
-        didSet {
-            if  {
-                view.backgroundColor = .green
-            }
-        }
-    }
+    var stockDetail: StocksData!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        checkChange()
     }
     
     func updateUI() {
@@ -35,5 +30,17 @@ class StocksDetailController: UIViewController {
         dateLabel.text = stockInfo.date
         openStockLabel.text = stockInfo.open.description
         closeStockLabel.text = stockInfo.close.description
+    }
+    
+    func checkChange() {
+        guard let stockInfo = stockDetail else {
+            fatalError("ha ha ha")
+        }
+        
+        if stockInfo.open > stockInfo.close {
+            view.backgroundColor = .green
+        } else if stockInfo.open < stockInfo.close {
+            view.backgroundColor = .red
+        }
     }
 }
