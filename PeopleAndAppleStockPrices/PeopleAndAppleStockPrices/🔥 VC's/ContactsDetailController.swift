@@ -27,8 +27,8 @@ class ContactsDetailController: UIViewController {
         guard let contactInfo = contactDetail else {
             fatalError("check segue!")
         }
-        nameLabel.text = contactInfo.fullName
-        addressLabel.text = contactInfo.location.street
+        nameLabel.text = contactInfo.fullName.capitalized
+        addressLabel.text = contactInfo.location.street.capitalized
         phoneLabel.text = contactInfo.phone
         emailLabel.text = contactInfo.email
         

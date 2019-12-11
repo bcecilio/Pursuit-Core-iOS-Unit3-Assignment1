@@ -9,7 +9,6 @@
 import Foundation
 
 struct StocksData: Decodable {
-    
     let date: String
     let open: Double
     let close: Double

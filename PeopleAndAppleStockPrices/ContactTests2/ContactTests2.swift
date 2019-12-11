@@ -7,27 +7,50 @@
 //
 
 import XCTest
+@testable import PeopleAndAppleStockPrices
 
-class ContactTests2: XCTestCase {
+class ContactsTests: XCTestCase {
 
+    let filename = "userinfo"
+    let ext = "json"
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testParseData() {
+        let data = Bundle.parseData(filename: filename, ext: ext)
+        XCTAssertNotNil(data)
     }
+    
+    func testFirstUserInData() {
+        let data = Bundle.parseData(filename: filename, ext: ext)
+        let users = UserData.getUserInfo(from: data)
+        let expectedFirstUser = "eugene"
+        let firstUser = users.first!
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+        XCTAssertEqual(firstUser.name.first, expectedFirstUser, "")
     }
-
+    
+    func testGetFirstUserEmail() {
+        let data = Bundle.parseData(filename: filename, ext: ext)
+        let users = UserData.getUserInfo(from: data)
+        let expectedFirstEmail = "eugene.henry@example.com"
+        let firstEmail = users.first!
+        
+        XCTAssertEqual(firstEmail.email, expectedFirstEmail, "")
+    }
 }
+
+//extension UserData {
+//    func getRawData() -> Data {
+//        let filename = "userinfo"
+//        let ext = "json"
+//        let data = Bundle.parseData(filename: filename, ext: ext)
+//        return data
+//    }
+//}

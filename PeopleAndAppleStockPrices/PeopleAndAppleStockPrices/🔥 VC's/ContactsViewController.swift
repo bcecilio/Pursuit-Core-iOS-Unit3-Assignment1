@@ -58,8 +58,8 @@ extension ContactsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactsCell", for: indexPath)
         
         let userCell = userInfo[indexPath.row]
-        cell.textLabel?.text = userCell.fullName
-        cell.detailTextLabel?.text = userCell.location.city
+        cell.textLabel?.text = userCell.fullName.capitalized
+        cell.detailTextLabel?.text = userCell.location.city.capitalized
         
         return cell
     }
