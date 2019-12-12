@@ -38,11 +38,11 @@ class StocksDetailController: UIViewController {
         }
         
         if stockInfo.open > stockInfo.close {
-            view.backgroundColor = .green
-            imageView.image = UIImage(imageLiteralResourceName: "thumbsUp")
-        } else if stockInfo.open < stockInfo.close {
             view.backgroundColor = .red
-            imageView.image = UIImage(imageLiteralResourceName: "thumbsDown")
+            imageView.image = #imageLiteral(resourceName: "thumbsDown")
+        } else if stockInfo.open < stockInfo.close {
+            view.backgroundColor = .green
+            imageView.image = #imageLiteral(resourceName: "thumbsUp")
         }
     }
 }
