@@ -90,12 +90,20 @@ extension StocksViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return stockSections.count
     }
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection: Int) -> String? {
-        guard let stock = stockSections[section].first?.label.components(seperatedBy: " ") else {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let stock = stockSections[section].first?.label.components(separatedBy: " ") else {
             return " "
         }
-        let title = "\(stock[0] - stock[2])"
+        let title = "\(stock[0]) - \(stock[2])"
         return title
     }
+
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection: Int) -> String? {
+//        guard let stock = stockSections[section].first?.label.components(seperatedBy: " ") else {
+//            return " "
+//        }
+//        let title = "\(stock[0] - stock[2])"
+//        return title
+//    }
 }
